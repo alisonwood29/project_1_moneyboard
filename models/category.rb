@@ -29,5 +29,13 @@ class Category
     SqlRunner.run(sql)
   end
 
+  def Category.find(id)
+    sql = "SELECT * FROM categories
+          WHERE id = $1"
+    values = [id]
+    category_hash = SqlRunner.run(sql, values).first
+    return Category.new(category_hash)
+  end
+
 
 end
