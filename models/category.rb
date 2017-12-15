@@ -12,14 +12,21 @@ class Category
 
   def save()
     sql = "INSERT INTO categories (name)
-          VALUES ($1) RETURNING id"
+          VALUES ($1) RETURNING id;"
     values = [@name]
     category_hash = SqlRunner.run(sql, values).first
     @id = category_hash["id"].to_i
   end
 
   def Category.all()
-    
+    sql = "SELECT * FROM categories;"
+    category_hashes = SqlRunner.run(sql)
+    return category_hashes.map {|category_hash| Category.new(category_hash)}
+  end
+
+  def Category.delete_all()
+    sql = "DELETE FROM categories;"
+    SqlRunner.run(sql)
   end
 
 
