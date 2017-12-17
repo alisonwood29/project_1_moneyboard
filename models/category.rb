@@ -21,7 +21,7 @@ class Category
   def Category.all()
     sql = "SELECT * FROM categories;"
     category_hashes = SqlRunner.run(sql)
-    return category_hashes.map {|category_hash| Category.new(category_hash)}
+    return map_items(category_hashes)
   end
 
   def Category.delete_all()
@@ -35,6 +35,15 @@ class Category
     values = [id]
     category_hash = SqlRunner.run(sql, values).first
     return Category.new(category_hash)
+  end
+
+
+
+
+
+  def Category.map_items(category_hashes)
+    result = category_hashes.map {|category_hash| Category.new(category_hash)}
+    return result
   end
 
 

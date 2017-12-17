@@ -3,6 +3,7 @@ require_relative("../models/vendor")
 require_relative("../models/transaction")
 require("pry-byebug")
 
+Transaction.delete_all()
 Category.delete_all()
 Vendor.delete_all()
 

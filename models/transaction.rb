@@ -20,4 +20,22 @@ class Transaction
     @id = transaction_hash["id"].to_i
   end
 
+  def Transaction.all()
+    sql = "SELECT * FROM transactions;"
+    transaction_hashes = SqlRunner.run(sql)
+    return map_items(transaction_hashes)
+  end
+
+  def Transaction.delete_all()
+    sql = "DELETE FROM transactions;"
+    SqlRunner.run(sql)
+  end
+
+
+
+  def Transaction.map_items(transaction_hashes)
+    result = transaction_hashes.map {|transaction_hash| Transaction.new(transaction_hash)}
+    return result
+  end
+
 end

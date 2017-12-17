@@ -20,7 +20,7 @@ class Vendor
   def Vendor.all()
     sql = "SELECT * FROM vendors;"
     vendor_hashes = SqlRunner.run(sql)
-    return vendor_hashes.map{|vendor| Vendor.new(vendor)}
+    return map_items(vendor_hashes)
   end
 
   def Vendor.delete_all()
@@ -47,6 +47,9 @@ class Vendor
 
 
 
-
+  def Vendor.map_items(vendor_hashes)
+    result = vendor_hashes.map {|vendor_hash| Vendor.new(vendor_hash)}
+    return result
+  end
 
 end
