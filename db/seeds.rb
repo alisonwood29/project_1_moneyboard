@@ -30,6 +30,26 @@ vendor_2.save()
 vendor_3.save()
 vendor_4.save()
 
+transaction_1 = Transaction.new({
+  "category_id" => category_1.id,
+  "vendor_id" => vendor_1.id,
+  "amount" => 20
+  })
+transaction_2 = Transaction.new({
+  "category_id" => category_2.id,
+  "vendor_id" => vendor_2.id,
+  "amount" => 50
+  })
+transaction_3 = Transaction.new({
+  "category_id" => category_4.id,
+  "vendor_id" => vendor_3.id,
+  "amount" => 30
+  })
+
+transaction_1.save()
+transaction_2.save()
+transaction_3.save()
+
 
 
 binding.pry
