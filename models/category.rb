@@ -18,6 +18,14 @@ class Category
     @id = category_hash["id"].to_i
   end
 
+  def transactions()
+    sql = "SELECT * FROM transactions
+          WHERE category_id = $1;"
+    values = [@id]
+    transaction_hashes = SqlRunner.run(sql, values)
+    return Transaction.map_items(transaction_hashes)
+  end
+
   def Category.all()
     sql = "SELECT * FROM categories;"
     category_hashes = SqlRunner.run(sql)

@@ -17,6 +17,14 @@ class Vendor
     @id = vendor_hash["id"].to_i
   end
 
+  def transactions()
+    sql = "SELECT * FROM transactions
+          WHERE vendor_id = $1;"
+    values = [@id]
+    transaction_hashes = SqlRunner.run(sql, values)
+    return Transaction.map_items(transaction_hashes)
+  end
+
   def Vendor.all()
     sql = "SELECT * FROM vendors;"
     vendor_hashes = SqlRunner.run(sql)
