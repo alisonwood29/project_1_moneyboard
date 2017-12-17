@@ -9,4 +9,11 @@ class Vendor
     @name = options["name"]
   end
 
+  def save()
+    sql = "INSERT INTO vendors (name)
+          VALUES ($1) RETURNING id;"
+    values = [@name]
+    vendor_hash = SqlRunner.run(sql, values).first
+    @id = vendor_hash["id"].to_i
+  end
 end
