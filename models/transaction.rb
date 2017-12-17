@@ -5,7 +5,7 @@ class Transaction
   attr_reader :id, :category_id, :vendor_id, :amount
 
   def initialize(options)
-    @id = options["if"].to_i if options["id"]
+    @id = options["id"].to_i if options["id"]
     @category_id = options["category_id"]
     @vendor_id = options["vendor_id"]
     @amount = options["amount"].to_i
@@ -29,6 +29,21 @@ class Transaction
   def Transaction.delete_all()
     sql = "DELETE FROM transactions;"
     SqlRunner.run(sql)
+  end
+
+  def Transaction.find(id)
+    sql = "SELECT * FROM transactions
+          WHERE id = $1;"
+    values = [id]
+    transaction_hash = SqlRunner.run(sql, values).first
+    return Transaction.new(transaction_hash)
+  end
+
+  def Transaction.delete(id)
+    sql = "DELETE FROM transactions
+          WHERE id = $1;"
+    values = [id]
+    SqlRunner.run(sql, values)
   end
 
 
