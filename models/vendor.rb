@@ -27,4 +27,26 @@ class Vendor
     sql = "DELETE FROM vendors;"
     SqlRunner.run(sql)
   end
+
+  def Vendor.find(id)
+    sql = "SELECT * FROM vendors
+          WHERE id = $1;"
+    values = [id]
+    vendor_hash = SqlRunner.run(sql, values).first
+    return Vendor.new(vendor_hash)
+  end
+
+  def Vendor.delete(id)
+    sql = "DELETE FROM vendors
+          WHERE id = $1;"
+    values = [id]
+    SqlRunner.run(sql, values)
+  end
+
+
+
+
+
+
+
 end
