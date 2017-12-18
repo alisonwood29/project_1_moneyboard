@@ -1,0 +1,12 @@
+<h2>Transactions</h2>
+
+<% @transactions.each do |transaction| %>
+
+<p>Category: <%= transaction.category.name %></p>
+<p>Vendor: <%= transaction.vendor.name %></p>
+<p>Amount: <%= transaction.amount %></p>
+
+<hr/>
+
+
+<% end %>
