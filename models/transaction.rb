@@ -6,8 +6,8 @@ class Transaction
 
   def initialize(options)
     @id = options["id"].to_i if options["id"]
-    @category_id = options["category_id"]
-    @vendor_id = options["vendor_id"]
+    @category_id = options["category_id"].to_i
+    @vendor_id = options["vendor_id"].to_i
     @amount = options["amount"].to_i
   end
 
