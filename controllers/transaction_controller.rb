@@ -23,6 +23,20 @@ post("/transactions") do
   erb(:"transactions/create")
 end
 
+get("/transactions/:id/edit") do
+  @categories = Category.all()
+  @vendors = Vendor.all()
+  @transaction = Transaction.find(params[:id])
+  @transaction.update()
+  erb(:"transactions/edit")
+end
+
+post("/transactions/:id") do
+  @transaction = Transaction.new(params)
+  @transaction.update()
+  redirect "/transactions"
+end
+
 get("/transactions/:id") do
   @transaction = Transaction.find(params[:id])
   erb(:"transactions/show")

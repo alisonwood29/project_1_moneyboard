@@ -20,6 +20,15 @@ class Transaction
     @id = transaction_hash["id"].to_i
   end
 
+  def update()
+    sql = "UPDATE transactions SET (category_id, vendor_id, amount)
+          = ($1, $2, $3)
+          WHERE id = $4;"
+    values = [@category_id, @vendor_id, @amount, @id]
+    SqlRunner.run(sql, values)
+
+  end
+
   def category()
     sql = "SELECT * FROM categories
           WHERE id = $1;"

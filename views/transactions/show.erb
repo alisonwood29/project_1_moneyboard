@@ -2,3 +2,5 @@
 <p>Category: <%= @transaction.category.name %></p>
 <p>Vendor: <%= @transaction.vendor.name %></p>
 <p>Amount: <%= @transaction.amount %></p>
+
+<a href="/transactions/<%= @transaction.id %>/edit">Edit Transaction</a>

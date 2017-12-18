@@ -1,0 +1,25 @@
+<form action="/transactions/<%= @transaction.id %>" method="POST">
+
+  <label for="category-input">Category:</label>
+  <select id="category-input" name="category_id">
+    <% @categories.each do |category| %>
+    <option value="<%= category.id %>"> <%= category.name %> </option>
+
+    <% end %>
+
+  </select>
+
+  <label for="vendor-input">Vendor:</label>
+  <select id="vendor-input" name="vendor_id">
+    <% @vendors.each do |vendor| %>
+    <option value="<%= vendor.id %>"> <%= vendor.name %> </option>
+
+    <% end %>
+
+  </select>
+
+  <label for="amount-input">Amount:</label>
+  <input id="amount-input" type="number" name="amount" value="<%= @transaction.amount %>" placeholder="£00.00">
+
+  <input type="submit" value="Update Transaction">
+</form>
