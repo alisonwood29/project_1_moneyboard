@@ -16,5 +16,5 @@ end
 post("/vendors") do
   @new_vendor = Vendor.new(params)
   @new_vendor.save()
-  erb(:"vendors/create")
+  redirect"/vendors"
 end
