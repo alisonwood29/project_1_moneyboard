@@ -1,0 +1,21 @@
+#container{
+  width: 90%;
+  margin: 40px auto;
+  background-color: DarkSeaGreen;
+}
+
+#contents{
+  background-color: wheat;
+  display: flex;
+}
+
+nav{
+  width: 20%;
+  background-color: wheat;
+}
+
+main{
+  width: 80%;
+  background-color: salmon;
+  padding: 10px 20px;
+}

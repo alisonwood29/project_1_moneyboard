@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="/styles/structure.css">
     <meta charset="utf-8">
     <title>Money Cashboard</title>
   </head>
   <body>
+    <div id="container">
     <h1>Money Cashboard</h1>
+    <div id="contents">
     <nav>
       <ul>
         <li> <a href="/transactions">View all transactions</a> </li>
         <li> <a href="/transactions/new">Add new transaction</a> </li>
       </ul>
     </nav>
+    <main>
 
     <%= yield %>
-
+  </main>
   </body>
+</div>
+</div>
 </html>
