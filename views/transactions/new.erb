@@ -2,6 +2,7 @@
 
   <label for="category-input">Category:</label>
   <select id="category-input" name="category_id">
+    <option selected disabled value="Choose one">Choose one</option>
     <% @categories.each do |category| %>
     <option value="<%= category.id %>"> <%= category.name %> </option>
 
@@ -11,6 +12,7 @@
 
   <label for="vendor-input">Vendor:</label>
   <select id="vendor-input" name="vendor_id">
+    <option selected disabled value="Choose one">Choose one</option>
     <% @vendors.each do |vendor| %>
     <option value="<%= vendor.id %>"> <%= vendor.name %> </option>
 
@@ -19,7 +21,7 @@
   </select>
 
   <label for="amount-input">Amount:</label>
-  <input id="amount-input" type="number" name="amount" placeholder="£00.00">
+  <input id="amount-input" type="number" name="amount" placeholder="00.00">
 
   <input type="submit" value="Add Transaction">
 </form>

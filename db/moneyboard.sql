@@ -17,5 +17,5 @@ CREATE TABLE transactions(
   id SERIAL4 PRIMARY KEY,
   category_id INT4 REFERENCES categories(id),
   vendor_id INT4 REFERENCES vendors(id),
-  amount INT2
+  amount DECIMAL(10,2)
 );
