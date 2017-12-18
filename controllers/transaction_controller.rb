@@ -22,3 +22,8 @@ post("/transactions") do
   @new_transaction.save()
   erb(:"transactions/create")
 end
+
+get("/transactions/:id") do
+  @transaction = Transaction.find(params[:id])
+  erb(:"transactions/show")
+end

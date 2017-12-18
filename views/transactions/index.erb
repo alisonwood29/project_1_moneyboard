@@ -6,7 +6,9 @@
 <p>Vendor: <%= transaction.vendor.name %></p>
 <p>Amount: <%= transaction.amount %></p>
 
+<a href="/transactions/<%= transaction.id %>">View Transaction</a>
 <hr/>
+
 
 
 <% end %>
