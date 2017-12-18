@@ -16,3 +16,9 @@ get("/transactions/new") do
   @vendors = Vendor.all()
   erb(:"transactions/new")
 end
+
+post("/transactions") do
+  @new_transaction = Transaction.new(params)
+  @new_transaction.save()
+  erb(:"transactions/create")
+end
