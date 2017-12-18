@@ -52,6 +52,7 @@ class Transaction
     return Vendor.new(vendor_hash)
   end
 
+
   def Transaction.all()
     sql = "SELECT * FROM transactions;"
     transaction_hashes = SqlRunner.run(sql)
@@ -71,6 +72,11 @@ class Transaction
     return Transaction.new(transaction_hash)
   end
 
+  def Transaction.total()
+    sql = "SELECT SUM(amount) FROM transactions;"
+    sum_hash = SqlRunner.run(sql).first
+    return sum_hash["sum"]
+  end
 
 
 

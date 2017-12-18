@@ -5,5 +5,6 @@ require_relative("controllers/vendor_controller")
 require_relative("controllers/category_controller")
 
 get ("/") do
+  @transactions = Transaction.all()
   erb(:index)
 end
