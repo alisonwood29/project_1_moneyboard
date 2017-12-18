@@ -46,10 +46,16 @@ transaction_3 = Transaction.new({
   "vendor_id" => vendor_3.id,
   "amount" => "30.00"
   })
+transaction_4 = Transaction.new({
+  "category_id" => category_1.id,
+  "vendor_id" => vendor_1.id,
+  "amount" => "30.00"
+  })
 
 transaction_1.save()
 transaction_2.save()
 transaction_3.save()
+transaction_4.save()
 
 
 
