@@ -8,3 +8,13 @@ get("/vendors") do
   @vendors = Vendor.all()
   erb(:"vendors/index")
 end
+
+get("/vendors/new") do
+  erb(:"vendors/new")
+end
+
+post("/vendors") do
+  @new_vendor = Vendor.new(params)
+  @new_vendor.save()
+  erb(:"vendors/create")
+end
