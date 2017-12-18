@@ -29,6 +29,13 @@ class Transaction
 
   end
 
+  def delete()
+    sql = "DELETE FROM transactions
+    WHERE id = $1;"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
   def category()
     sql = "SELECT * FROM categories
           WHERE id = $1;"
@@ -64,12 +71,6 @@ class Transaction
     return Transaction.new(transaction_hash)
   end
 
-  def Transaction.delete(id)
-    sql = "DELETE FROM transactions
-          WHERE id = $1;"
-    values = [id]
-    SqlRunner.run(sql, values)
-  end
 
 
 

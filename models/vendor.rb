@@ -17,6 +17,13 @@ class Vendor
     @id = vendor_hash["id"].to_i
   end
 
+  def delete()
+    sql = "DELETE FROM vendors
+    WHERE id = $1;"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
   def transactions()
     sql = "SELECT * FROM transactions
           WHERE vendor_id = $1;"
@@ -42,13 +49,6 @@ class Vendor
     values = [id]
     vendor_hash = SqlRunner.run(sql, values).first
     return Vendor.new(vendor_hash)
-  end
-
-  def Vendor.delete(id)
-    sql = "DELETE FROM vendors
-          WHERE id = $1;"
-    values = [id]
-    SqlRunner.run(sql, values)
   end
 
 
