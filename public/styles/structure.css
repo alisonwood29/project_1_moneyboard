@@ -1,6 +1,6 @@
 #container{
   width: 90%;
-  margin: 40px auto;
+  margin: 10px;
   background-color: DarkSeaGreen;
 }
 
@@ -11,7 +11,7 @@
 
 nav{
   width: 20%;
-  background-color: wheat;
+  background-color: papayawhip;
 }
 
 main{
