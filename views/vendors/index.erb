@@ -1,9 +1,10 @@
-<h2>Vendors</h2>
+<h2>Spending by Vendor</h2>
 
 <table>
-  <tr>
   <% @vendors.each do |vendor| %>
+  <tr>
   <td> <%= vendor.name %></td>
+  <td> <%= vendor.total_spend %></td>
 </tr>
   <% end %>
 

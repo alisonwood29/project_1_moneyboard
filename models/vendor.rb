@@ -32,6 +32,14 @@ class Vendor
     return Transaction.map_items(transaction_hashes)
   end
 
+  def total_spend()
+    sql = "SELECT SUM(amount) FROM transactions
+          WHERE vendor_id = $1;"
+    values = [@id]
+    sum_hash = SqlRunner.run(sql, values).first
+    return sum_hash["sum"]
+  end
+
   def Vendor.all()
     sql = "SELECT * FROM vendors;"
     vendor_hashes = SqlRunner.run(sql)
