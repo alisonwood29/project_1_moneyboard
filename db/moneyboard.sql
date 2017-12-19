@@ -25,5 +25,5 @@ CREATE TABLE transactions(
 CREATE TABLE accounts(
   id SERIAL4 PRIMARY KEY,
   name VARCHAR(255),
-  budget INT2
+  budget DECIMAL(10,2)
 );
