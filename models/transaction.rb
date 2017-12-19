@@ -25,9 +25,8 @@ class Transaction
     sql = "UPDATE transactions SET (category_id, vendor_id, amount, transaction_date)
           = ($1, $2, $3, $4)
           WHERE id = $5;"
-    values = [@category_id, @vendor_id, @amount, @id, @transaction_date]
+    values = [@category_id, @vendor_id, @amount, @transaction_date, @id]
     SqlRunner.run(sql, values)
-
   end
 
   def delete()

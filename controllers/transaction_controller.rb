@@ -27,7 +27,6 @@ get("/transactions/:id/edit") do
   @categories = Category.all()
   @vendors = Vendor.all()
   @transaction = Transaction.find(params[:id])
-  @transaction.update()
   erb(:"transactions/edit")
 end
 

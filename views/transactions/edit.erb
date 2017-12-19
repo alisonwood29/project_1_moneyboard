@@ -21,5 +21,8 @@
   <label for="amount-input">Amount:</label>
   <input id="amount-input" type="number" name="amount" value="<%= @transaction.amount %>">
 
+  <label for="date-input">Date:</label>
+  <input id="date-input" type="date" name="transaction_date" value="<%= @transaction.transaction_date %>" format="YYYY/MM/DD">
+
   <input type="submit" value="Update Transaction">
 </form>
