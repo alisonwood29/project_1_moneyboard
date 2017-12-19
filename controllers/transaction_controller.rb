@@ -42,6 +42,12 @@ post("/transactions/:id/delete") do
   redirect "/transactions"
 end
 
+get("/transactions/:id/date") do
+  @transaction = Transaction.find(params[:id])
+  @transaction_spend = Transaction.spend_by_date(@transaction.transaction_date)
+  erb(:"transactions/date")
+end
+
 get("/transactions/:id") do
   @transaction = Transaction.find(params[:id])
   erb(:"transactions/show")
