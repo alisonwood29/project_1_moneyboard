@@ -1,6 +1,8 @@
 DROP TABLE IF EXISTS transactions;
 DROP TABLE IF EXISTS categories;
 DROP TABLE IF EXISTS vendors;
+DROP TABLE IF EXISTS accounts;
+
 
 
 CREATE TABLE vendors(
@@ -18,4 +20,10 @@ CREATE TABLE transactions(
   category_id INT4 REFERENCES categories(id),
   vendor_id INT4 REFERENCES vendors(id),
   amount DECIMAL(10,2)
+);
+
+CREATE TABLE accounts(
+  id SERIAL4 PRIMARY KEY,
+  name VARCHAR(255),
+  budget INT2
 );

@@ -1,12 +1,20 @@
 <h2>Spending by Vendor</h2>
 
 <table>
-  <% @vendors.each do |vendor| %>
+
   <tr>
-  <td> <%= vendor.name %></td>
-  <td> <%= vendor.total_spend %></td>
+  <td>
+    <% @vendors.each do |vendor| %>
+     <%= vendor.name %>
+     <% end %>
+   </td>
+  <td>
+  <%= amounts = @vendors.each {|vendor| vendor.total_spend} %>
+    <% sorted = amounts.sort {|a, b| b <=> a} %>
+    <% return sorted %>
+    <% end %>
+  </td>
 </tr>
-  <% end %>
 
 
 
