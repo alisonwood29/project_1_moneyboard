@@ -53,6 +53,7 @@ class Transaction
   end
 
 
+
   def Transaction.all()
     sql = "SELECT * FROM transactions;"
     transaction_hashes = SqlRunner.run(sql)
@@ -78,6 +79,13 @@ class Transaction
     return sum_hash["sum"]
   end
 
+  def Transaction.spend_by_date(transaction_date)
+    sql = "SELECT SUM(amount) FROM transactions
+          WHERE transaction_date = $1;"
+    values = [transaction_date]
+    result = SqlRunner.run(sql, values).first
+    return result["sum"]
+  end
 
 
   def Transaction.map_items(transaction_hashes)
