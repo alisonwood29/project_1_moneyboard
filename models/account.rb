@@ -22,7 +22,6 @@ class Account
   def Account.all()
     sql = "SELECT * FROM accounts;"
     account_hashes = SqlRunner.run(sql)
-    # return account_hashes.map {|account| Account.new(account)}
     return Account.new(account_hashes[0])
   end
 

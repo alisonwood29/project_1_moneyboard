@@ -9,22 +9,23 @@ class Transaction
     @category_id = options["category_id"].to_i
     @vendor_id = options["vendor_id"].to_i
     @amount = options["amount"].to_i
+    @date = options["date"]
   end
 
   def save()
-    sql = "INSERT INTO transactions (category_id, vendor_id, amount)
+    sql = "INSERT INTO transactions (category_id, vendor_id, amount, date)
           VALUES ($1, $2, $3)
           RETURNING id;"
-    values = [@category_id, @vendor_id, @amount]
+    values = [@category_id, @vendor_id, @amount, @date]
     transaction_hash = SqlRunner.run(sql, values).first
     @id = transaction_hash["id"].to_i
   end
 
   def update()
-    sql = "UPDATE transactions SET (category_id, vendor_id, amount)
+    sql = "UPDATE transactions SET (category_id, vendor_id, amount, date)
           = ($1, $2, $3)
           WHERE id = $4;"
-    values = [@category_id, @vendor_id, @amount, @id]
+    values = [@category_id, @vendor_id, @amount, @id, @date]
     SqlRunner.run(sql, values)
 
   end
