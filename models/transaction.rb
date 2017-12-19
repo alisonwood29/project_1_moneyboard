@@ -73,6 +73,14 @@ class Transaction
     return Transaction.new(transaction_hash)
   end
 
+  def Transaction.find(date)
+    sql = "SELECT * FROM transactions
+          WHERE transaction_date = $1;"
+    values = [date]
+    transaction_hash = SqlRunner.run(sql, values).first
+    return Transaction.new(transaction_hash)
+  end
+
   def Transaction.total()
     sql = "SELECT SUM(amount) FROM transactions;"
     sum_hash = SqlRunner.run(sql).first

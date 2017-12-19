@@ -2,4 +2,12 @@
 
 <p>Total spend: £<%= @total %></p>
 <p>Budget: £<%= @account.budget %></p>
-<p>You have £<%= @account.budget.to_i - @total.to_f %> left to spend this month!</p>
+<p>You have £<%= @account.budget.to_i - @total.to_i %> left to spend this month!</p>
+
+<% if  @total.to_i > @account.budget.to_i %>
+ <%= "WARNING: You are over budget for this month!!" %>
+ <% elsif @total.to_i == @account.budget.to_i %>
+ <%= "You have reached your budget for this month!" %>
+ <% else %>
+ <%= "You are still on track this month!" %>
+<% end %>
