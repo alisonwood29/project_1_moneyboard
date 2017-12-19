@@ -1,6 +1,7 @@
 require_relative("../models/category")
 require_relative("../models/vendor")
 require_relative("../models/transaction")
+require_relative("../models/account")
 require("pry-byebug")
 
 Transaction.delete_all()
@@ -56,6 +57,12 @@ transaction_1.save()
 transaction_2.save()
 transaction_3.save()
 transaction_4.save()
+
+account = Account.new({
+  "name" => "Alison"
+  })
+
+account.save()
 
 
 
