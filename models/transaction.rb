@@ -73,11 +73,14 @@ class Transaction
     return Transaction.new(transaction_hash)
   end
 
-  def Transaction.find(date)
+  def Transaction.find_by_date(date)
     sql = "SELECT * FROM transactions
           WHERE transaction_date = $1;"
     values = [date]
     transaction_hash = SqlRunner.run(sql, values).first
+    if transaction_hash == nil
+      return nil
+    end
     return Transaction.new(transaction_hash)
   end
 

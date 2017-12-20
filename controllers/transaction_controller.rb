@@ -30,6 +30,12 @@ get("/transactions/:id/edit") do
   erb(:"transactions/edit")
 end
 
+post("/transactions/spend") do
+  @transaction = Transaction.find_by_date(params[:date])
+  @transaction_spend = Transaction.spend_by_date(@transaction.transaction_date)
+  erb(:"transactions/date")
+end
+
 post("/transactions/:id") do
   @transaction = Transaction.new(params)
   @transaction.update()
@@ -42,16 +48,11 @@ post("/transactions/:id/delete") do
   redirect "/transactions"
 end
 
-# get("/transactions/spending") do
-#   # @transaction = Transaction.find(params[:transaction_date])
-#   erb(:"transactions/spending")
-# end
-#
-# post("/transactions/spend") do
-#   @transaction = Transaction.find(params[:transaction_date])
-#   @transaction_spend = Transaction.spend_by_date(@transaction.transaction_date)
-#   erb(:"transactions/date")
-# end
+get("/transactions/spending") do
+  # @transaction = Transaction.find_by_date(params[:transaction_date])
+  erb(:"transactions/spending")
+end
+
 
 
 get("/transactions/:id") do
