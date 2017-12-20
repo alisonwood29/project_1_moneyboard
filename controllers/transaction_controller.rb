@@ -30,10 +30,18 @@ get("/transactions/:id/edit") do
   erb(:"transactions/edit")
 end
 
+
 post("/transactions/spend") do
   @transactions = Transaction.find_by_date(params[:date])
+  if @transactions == nil
+    redirect "/transactions/not_found"
+  end
   @transaction_spend = Transaction.spend_by_date(params[:date])
   erb(:"transactions/date")
+end
+
+get("/transactions/not_found") do
+  erb(:"transactions/not_found")
 end
 
 post("/transactions/:id") do
