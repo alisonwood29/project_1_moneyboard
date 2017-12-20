@@ -49,11 +49,8 @@ post("/transactions/:id/delete") do
 end
 
 get("/transactions/spending") do
-  # @transaction = Transaction.find_by_date(params[:transaction_date])
   erb(:"transactions/spending")
 end
-
-
 
 get("/transactions/:id") do
   @transaction = Transaction.find(params[:id])

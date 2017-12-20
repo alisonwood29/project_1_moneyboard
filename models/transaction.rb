@@ -77,11 +77,11 @@ class Transaction
     sql = "SELECT * FROM transactions
           WHERE transaction_date = $1;"
     values = [date]
-    transaction_hash = SqlRunner.run(sql, values).first
-    if transaction_hash == nil
+    transaction_hashes = SqlRunner.run(sql, values)
+    if transaction_hashes.count == 0
       return nil
     end
-    return Transaction.new(transaction_hash)
+    return map_items(transaction_hashes)
   end
 
   def Transaction.total()

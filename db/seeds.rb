@@ -54,7 +54,7 @@ transaction_4 = Transaction.new({
   "category_id" => category_1.id,
   "vendor_id" => vendor_1.id,
   "amount" => "30.00",
-  "transaction_date" => "2017/12/07"
+  "transaction_date" => "2017/12/19"
   })
 
 transaction_1.save()
@@ -67,6 +67,8 @@ account = Account.new({
   })
 
 account.save()
+
+transaction = Transaction.find_by_date("2017-12-19")
 
 
 
