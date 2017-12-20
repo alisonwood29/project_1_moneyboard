@@ -31,8 +31,8 @@ get("/transactions/:id/edit") do
 end
 
 post("/transactions/spend") do
-  @transaction = Transaction.find_by_date(params[:date])
-  @transaction_spend = Transaction.spend_by_date(@transaction.transaction_date)
+  @transactions = Transaction.find_by_date(params[:date])
+  @transaction_spend = Transaction.spend_by_date(params[:date])
   erb(:"transactions/date")
 end
 

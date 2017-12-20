@@ -1,3 +1,25 @@
-<h2>Spending on <%= @transaction.transaction_date %></h2>
+<h2>Spending: <%= @transactions.first.transaction_date %></h2>
+
 
 <p>You spent: <%= @transaction_spend  %></p>
+
+<table>
+
+  <th>Category</th>
+  <th>Vendor</th>
+  <th>Amount</th>
+
+  <% @transactions.each do |transaction| %>
+
+  <tr>
+
+    <td><%= transaction.category.name %></td>
+    <td><%= transaction.vendor.name %></td>
+    <td><%= transaction.amount %></td>
+
+
+  </tr>
+
+  <% end %>
+
+</table>

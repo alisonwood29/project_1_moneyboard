@@ -2,7 +2,7 @@
 <p>Category: <%= @transaction.category.name %></p>
 <p>Vendor: <%= @transaction.vendor.name %></p>
 <p>Amount: £ <%= @transaction.amount %></p>
-<p>Date: <a href="/transactions/<%= @transaction.id %>/date"><%= @transaction.transaction_date %></a> </p>
+<p>Date: <%= @transaction.transaction_date %></a> </p>
 
 <button type="button" name="button"><a href="/transactions/<%= @transaction.id %>/edit">Edit Transaction</a></button>
 <form action="/transactions/<%= @transaction.id %>/delete" method="POST">
