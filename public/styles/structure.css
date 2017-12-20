@@ -1,7 +1,7 @@
 #container{
   width: 90%;
   margin: 10px;
-  background-color: DarkSeaGreen;
+  background-color: #5f9ea0;
 }
 
 #contents{
@@ -9,13 +9,25 @@
   display: flex;
 }
 
+body{
+  font-family: 'Noto Sans', sans-serif;
+}
+
 nav{
   width: 20%;
-  background-color: papayawhip;
+  background-color: #a0d6b4;
 }
 
 main{
   width: 80%;
-  background-color: salmon;
+  background-color: #317873;
   padding: 10px 20px;
+}
+
+header{
+  text-align: center;
+}
+
+h1, h2 {
+  font-family: 'Merriweather Sans', sans-serif;
 }
