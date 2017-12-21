@@ -52,6 +52,10 @@ class Transaction
     return Vendor.new(vendor_hash)
   end
 
+  def amount_display(amount)
+    sprintf("%.2f", amount)
+  end
+
 
 
   def Transaction.all()
