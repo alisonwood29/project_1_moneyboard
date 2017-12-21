@@ -15,6 +15,16 @@ body{
 nav{
   width: 20%;
   background-color: #a0d6b4;
+  padding-right: 25px;
+}
+nav ul li {
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+ul {
+  padding-left: 10px;
+  list-style-type: none;
+  color: black;
 }
 
 main{
@@ -26,6 +36,9 @@ main{
 header{
   text-align: center;
 }
+h1{
+  font-size: 40px;
+}
 
 h2 {
   font-family: 'Merriweather Sans', sans-serif;
@@ -33,9 +46,6 @@ h2 {
   font-size: 30px;
 }
 
-.container{
-  width: 100%;
-}
 .contents{
   display: flex;
 }
@@ -53,4 +63,12 @@ h2 {
 .button-div{
 width: 30%;
 padding: 10px;
+}
+#total_spend{
+  font-size: 80px;
+  text-align: center;
+}
+#budget{
+  text-align: center;
+  font-size: 18px;
 }

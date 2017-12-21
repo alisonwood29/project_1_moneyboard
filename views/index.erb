@@ -1,6 +1,7 @@
-<h2>Welcome to your Budget Tracker, <%= @account.name %></h2>
+<h2>Welcome to your Budget Trackr, <%= @account.name %></h2>
 
-<p>Total spend: £<%= @total %></p>
+<p id="total_spend">Total spend: £<%= @total %></p>
+<div id="budget">
 <p>Budget: £<%= @account.budget %></p>
 <p>You have £<%= @account.budget - @total.to_f %> left to spend this month!</p>
 
@@ -9,5 +10,6 @@
  <% elsif @total.to_i == @account.budget.to_i %>
  <%= "You have reached your budget for this month!" %>
  <% else %>
- <%= "You are still on track this month!" %>
+ <%= "You are still on track." %>
 <% end %>
+</div>
