@@ -26,8 +26,28 @@ main{
 
 header{
   text-align: center;
+  margin: 10px auto;
 }
 
-h1, h2 {
+h2 {
   font-family: 'Merriweather Sans', sans-serif;
+  text-align: center;
+  font-size: 30px;
+}
+
+.container{
+  width: 100%;
+}
+.contents{
+  display: flex;
+}
+
+.table{
+  width: 70%;
+  background-color: #317873;
+  text-align: center;
+}
+.button-div{
+width: 30%;
+margin-top: 30%;
 }
