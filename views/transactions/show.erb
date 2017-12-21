@@ -5,6 +5,7 @@
 <p>Vendor: <%= @transaction.vendor.name %></p>
 <p>Amount: £ <%= @transaction.amount %></p>
 <p>Date: <%= @transaction.transaction_date %></a> </p>
+<p>Comment: <%= @transaction.comment %></a> </p>
 
 
 <button class="button--edit" type="button" name="button"><a href="/transactions/<%= @transaction.id %>/edit" style="text-decoration:none;">Edit Transaction</a></button>

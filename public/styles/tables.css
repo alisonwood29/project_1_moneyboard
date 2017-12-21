@@ -8,3 +8,6 @@ td{
 tr:hover {
   background-color: #49796b;
 }
+#date_spend_table th tr td{
+  text-align: right;
+}

@@ -1,14 +1,14 @@
-<h2>Welcome to your Budget Trackr, <%= @account.name %></h2>
+<h2>Welcome to your Travel Money Trackr, <%= @account.name %></h2>
 
-<p id="total_spend">Total spend: £<%= @total %></p>
+<p id="total_spend">Total spend this trip: £<%= @total %></p>
 <div id="budget">
-<p>Budget: £<%= @account.budget %></p>
-<p>You have £<%= @account.budget - @total.to_f %> left to spend this month!</p>
+<p>Budget: <%= @account.amount_display(@account.budget) %></p>
+<p>You have £<%= @account.budget - @total.to_f %> left to spend on your trip!</p>
 
 <% if  @total.to_i > @account.budget.to_i %>
- <%= "WARNING: You are over budget for this month!!" %>
+ <%= "WARNING: You are over budget for this trip!!!" %>
  <% elsif @total.to_i == @account.budget.to_i %>
- <%= "You have reached your budget for this month!" %>
+ <%= "You have reached your budget for this trip!" %>
  <% else %>
  <%= "You are still on track." %>
 <% end %>

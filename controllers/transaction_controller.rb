@@ -31,7 +31,7 @@ get("/transactions/:id/edit") do
 end
 
 
-post("/transactions/spend") do
+get("/transactions/spend") do
   @transactions = Transaction.find_by_date(params[:date])
   if @transactions == nil
     redirect "/transactions/not_found"

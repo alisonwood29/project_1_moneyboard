@@ -19,6 +19,11 @@ class Account
     @id = account_hash["id"].to_i
   end
 
+  def amount_display(amount)
+    # sprintf("%.2f", amount)
+    return "£#{amount.round(2)}"
+  end
+
   def Account.all()
     sql = "SELECT * FROM accounts;"
     account_hashes = SqlRunner.run(sql)

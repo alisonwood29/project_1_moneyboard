@@ -2,30 +2,31 @@ require_relative("../db/sql_runner")
 
 class Transaction
 
-  attr_reader :id, :category_id, :vendor_id, :amount, :transaction_date
+  attr_reader :id, :category_id, :vendor_id, :amount, :transaction_date, :comment
 
   def initialize(options)
     @id = options["id"].to_i if options["id"]
     @category_id = options["category_id"].to_i
     @vendor_id = options["vendor_id"].to_i
-    @amount = options["amount"]
+    @amount = options["amount"].to_f
     @transaction_date = options["transaction_date"]
+    @comment = options["comment"]
   end
 
   def save()
-    sql = "INSERT INTO transactions (category_id, vendor_id, amount, transaction_date)
-          VALUES ($1, $2, $3, $4)
+    sql = "INSERT INTO transactions (category_id, vendor_id, amount, transaction_date, comment)
+          VALUES ($1, $2, $3, $4, $5)
           RETURNING id;"
-    values = [@category_id, @vendor_id, @amount, @transaction_date]
+    values = [@category_id, @vendor_id, @amount, @transaction_date, @comment]
     transaction_hash = SqlRunner.run(sql, values).first
     @id = transaction_hash["id"].to_i
   end
 
   def update()
-    sql = "UPDATE transactions SET (category_id, vendor_id, amount, transaction_date)
-          = ($1, $2, $3, $4)
-          WHERE id = $5;"
-    values = [@category_id, @vendor_id, @amount, @transaction_date, @id]
+    sql = "UPDATE transactions SET (category_id, vendor_id, amount, transaction_date, comment)
+          = ($1, $2, $3, $4, $5)
+          WHERE id = $6;"
+    values = [@category_id, @vendor_id, @amount, @transaction_date, @comment, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -53,7 +54,8 @@ class Transaction
   end
 
   def amount_display(amount)
-    sprintf("%.2f", amount)
+    # sprintf("%.2f", amount)
+    return "#{amount.round(2)}"
   end
 
 
