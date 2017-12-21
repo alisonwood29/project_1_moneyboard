@@ -54,7 +54,7 @@ class Transaction
   end
 
   def amount_display(amount)
-    # sprintf("%.2f", amount)
+    # return sprintf("%.2f", amount)
     return "#{amount.round(2)}"
   end
 

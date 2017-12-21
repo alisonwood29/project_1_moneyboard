@@ -42,7 +42,7 @@ transaction_1 = Transaction.new({
 transaction_2 = Transaction.new({
   "category_id" => category_2.id,
   "vendor_id" => vendor_2.id,
-  "amount" => 50,
+  "amount" => 25,
   "transaction_date" => "2017/11/01",
   "comment" => "Hostel in Munich"
   })
@@ -56,7 +56,7 @@ transaction_3 = Transaction.new({
 transaction_4 = Transaction.new({
   "category_id" => category_3.id,
   "vendor_id" => vendor_5.id,
-  "amount" => 30,
+  "amount" => 60,
   "transaction_date" => "2017/10/31",
   "comment" => "Train from Milan to Munich"
   })
