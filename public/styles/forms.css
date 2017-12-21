@@ -1,7 +1,24 @@
+form{
+  display: grid;
+}
 input{
   width: 200px;
-  padding: 6px 10px;
-  margin: 8px 0;
+  padding: 10px 10px;
+  margin: 15px 0;
   box-sizing: border-box;
   border-radius: 5px;
+  outline: none;
+}
+input:focus{
+  border: 1px solid black;
+}
+select{
+  width: 200px;
+  height: 30px;
+  margin: 15px 0;
+  border-radius: 5px;
+  outline: none;
+}
+select:focus{
+  border: 1px solid black;
 }

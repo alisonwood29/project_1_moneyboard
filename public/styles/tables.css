@@ -1,0 +1,10 @@
+table{
+width: 50%;
+}
+td{
+  width: 20px;
+  text-align: left;
+}
+tr:hover {
+  background-color: #49796b;
+}
