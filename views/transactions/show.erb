@@ -1,12 +1,26 @@
-<h2>Transaction Details:</h2>
+<div class="container">
+
+<h2>Transaction Details</h2>
+
+<div class="contents">
+<div class="transactions">
+
 <p>Category: <%= @transaction.category.name %></p>
 <p>Vendor: <%= @transaction.vendor.name %></p>
 <p>Amount: £ <%= @transaction.amount %></p>
 <p>Date: <%= @transaction.transaction_date %></a> </p>
+  </div>
 
-<button type="button" name="button"><a href="/transactions/<%= @transaction.id %>/edit" style="text-decoration:none;">Edit Transaction</a></button>
+
+<div class="button-div">
+
+<button class="button--edit" type="button" name="button"><a href="/transactions/<%= @transaction.id %>/edit" style="text-decoration:none;">Edit Transaction</a></button>
 <form action="/transactions/<%= @transaction.id %>/delete" method="POST">
 
-<input type="submit" value="Delete Transaction">
+<input class="button--delete" type="submit" value="Delete Transaction">
 
 </form>
+
+</div>
+</div>
+</div>

@@ -1,8 +1,8 @@
-<h2>Welcome to Money Cashboard, <%= @account.name %></h2>
+<h2>Welcome to your Budget Tracker, <%= @account.name %></h2>
 
 <p>Total spend: £<%= @total %></p>
 <p>Budget: £<%= @account.budget %></p>
-<p>You have £<%= @account.budget.to_i - @total.to_i %> left to spend this month!</p>
+<p>You have £<%= @account.budget - @total.to_f %> left to spend this month!</p>
 
 <% if  @total.to_i > @account.budget.to_i %>
  <%= "WARNING: You are over budget for this month!!" %>

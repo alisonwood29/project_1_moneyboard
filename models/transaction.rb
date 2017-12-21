@@ -8,7 +8,7 @@ class Transaction
     @id = options["id"].to_i if options["id"]
     @category_id = options["category_id"].to_i
     @vendor_id = options["vendor_id"].to_i
-    @amount = options["amount"].to_i
+    @amount = options["amount"]
     @transaction_date = options["transaction_date"]
   end
 

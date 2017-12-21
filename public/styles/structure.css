@@ -1,6 +1,5 @@
 #container{
-  width: 90%;
-  margin: 10px;
+  width: 100%;
   background-color: #5f9ea0;
 }
 
@@ -26,7 +25,6 @@ main{
 
 header{
   text-align: center;
-  margin: 10px auto;
 }
 
 h2 {
@@ -47,7 +45,12 @@ h2 {
   background-color: #317873;
   text-align: center;
 }
+.transactions{
+  width: 50%;
+  background-color: #317873;
+  margin-left: 20px;
+}
 .button-div{
 width: 30%;
-margin-top: 30%;
+padding: 10px;
 }

@@ -8,14 +8,9 @@
   float: right;
 }
 
-.button:hover {
+.button:hover, .button--submit:hover, .button--edit:hover, .button--delete:hover {
   background-color: #92b8f4;
   color: white;
-  text-decoration: none;
-  
-}
-.button:link{
-  text-decoration: none;
 }
 
 .button--submit{
@@ -26,7 +21,13 @@
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
 }
-.button--submit:hover {
-  background-color: #92b8f4;
-  color: white;
+.button--edit, .button--delete{
+  padding: 8px 24px;
+  font-size: 12px;
+  border-radius: 10px;
+  background-color: papayawhip;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  float: left;
+  margin: 5px auto;
 }

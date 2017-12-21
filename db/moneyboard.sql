@@ -20,7 +20,7 @@ CREATE TABLE transactions(
   category_id INT4 REFERENCES categories(id),
   vendor_id INT4 REFERENCES vendors(id),
   amount DECIMAL(10,2),
-  transaction_date DATE
+  transaction_date DATE NOT NULL
 );
 
 CREATE TABLE accounts(
