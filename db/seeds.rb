@@ -74,7 +74,7 @@ account = Account.new({
 account.save()
 
 
-
+Transaction.find(1)
 
 
 binding.pry
