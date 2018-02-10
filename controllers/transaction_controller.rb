@@ -32,6 +32,9 @@ end
 
 
 get("/transactions/spend") do
+  if params[:date] == ""
+    redirect "/transactions/not_found"
+  end
   @transactions = Transaction.find_by_date(params[:date])
   if @transactions == nil
     redirect "/transactions/not_found"
